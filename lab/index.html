@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>贝壳题库</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/clienthint.js"></script>
+
+	</head>
+	<body onload="ultraini()">
+		<div class="container">
+			<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								<li>
+									<a class="gn-icon gn-icon-download" onclick="debut(this)">统计信息</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-illustrator">单　选　<input class="sum" type="text" value="" />　题</a></li>
+										<li><a class="gn-icon gn-icon-photoshop">多　选　<input class="sum" type="text" value="" />　题</a></li>
+										<li><a class="gn-icon gn-icon-photoshop">Ｂ　型　<input class="sum" type="text" value="" />　题</a></li>
+										<li id="begin" onclick="init()"><a class="cen">开始测试　　　　　　</a></li>
+										<li><a class="gn-icon gn-icon-illustrator">得　分　<input class="grade" type="text" id="score" value="0" /></a></li>
+										<li><a class="gn-icon gn-icon-photoshop">正确率　<input class="grade" type="text" id="rate" value="" /></a></li>
+										<li id="result" onclick="gai()"><a class="cen">交　　卷　　　　　　</a></li>
+									</ul>
+								</li>
+								<li>
+									<a class="gn-icon gn-icon-cog" onclick="debut(this)">紊乱</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-article" onclick="fet(this)">凝血与抗凝血平衡紊乱</a></li>
+										<li><a class="gn-icon gn-icon-article" onclick="fet(this)">酸碱平衡与酸碱平衡紊乱</a></li>
+										<li><a class="gn-icon gn-icon-article" onclick="fet(this)">水、电解质代谢紊乱</a></li>
+									</ul>
+								</li>
+								<li>
+									<a class="gn-icon gn-icon-help" onclick="debut(this)">功能不全</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-pictures" onclick="fet(this)">心功能不全</a></li>
+										<li><a class="gn-icon gn-icon-pictures" onclick="fet(this)">肺功能不全</a></li>
+										<li><a class="gn-icon gn-icon-pictures" onclick="fet(this)">肾功能不全</a></li>
+										<li><a class="gn-icon gn-icon-pictures" onclick="fet(this)">肝功能不全</a></li>										
+									</ul>
+								</li>
+								<li>
+									<a class="gn-icon gn-icon-archive" onclick="debut(this)">其他</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">休克</a></li>
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">缺氧</a></li>
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">应激</a></li>
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">发热</a></li>
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">缺血-再灌注损伤</a></li>										
+										<li><a class="gn-icon gn-icon-videos" onclick="fet(this)">模拟题（一）</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+				
+				<li id="enbrd" onclick="init()">
+					　贝壳传媒　
+				</li>
+				
+				<li id="whatyc" onclick="gai()">
+					<!--您选择的题库：-->
+					　无　
+				</li>
+				
+				<li id="qst">
+					
+				</li>
+			</ul>
+		</div>
+		
+	<div id="stuff"></div>
+	<div id="tstp">
+		<!--正文部分 -->
+		<div>
+			<form>
+				查找题库：<input type="text" id="key" onkeyup="showHint(this.value, 'hint', 'txtHint')" />
+			</form>
+			<div>
+				<p>Suggestion: </p>
+				<div id="txtHint">no suggestion</div>
+			</div>
+		</div>
+		<div id="notice">
+			<p>v 1.0.5</p>
+			<p>注意:</p>
+			<p>1.题目大量导入的过程中难免出错，我们的工作人员不一定能一一排除，还请您多多反馈给我们　<button>帮助我们更好完善</button></p>
+			<p>3.点击“贝壳传媒”可以直接出题，点击标题栏位置处（“贝壳传媒”右边）可以直接交卷</p>
+		</div>
+		<div id="sing">
+			<h2>单选题</h2>
+		</div>
+		<div id="plur">
+			<h2>多选题</h2>
+		</div>
+		<div id="btyp">
+			<h2>B型题</h2>
+		</div>
+	</div>
+	<div id="list">
+		<div class="q">
+		question
+		</div>
+		<div class="aframe">
+		</div>
+	</div>
+	<div id="biao">
+		<div class="bframe">
+			<!-- 容纳选项 -->
+			<div class="opt">
+			</div>
+			
+			<!-- 容纳问题 -->
+			<div class="session">
+				<div class="q"></div>
+				<div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="pre"></div>
+	<div id="tbl"></div>
+	<div id="frm"></div>
+	<div id="btp"></div>
+	
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+		
+	</body>
+</html>

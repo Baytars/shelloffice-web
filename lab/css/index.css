@@ -1,0 +1,71 @@
+html,body {
+	margin:0;
+	padding:15px;
+	font-family:微软雅黑;
+}
+
+div {
+	margin:0;
+	padding:0;
+	font-family:微软雅黑;
+}
+
+.q, .aframe {
+	border:1px solid #7b7b7b;
+}
+
+.q {
+	background:yellow;
+}
+
+#pre,#tbl,#frm,#btp {
+	border:5px solid red;
+}
+
+.sum {
+	width:40px;
+}
+
+#list {
+	border:5px solid red;
+	display:none;
+}
+
+.note {
+	display:none;
+}
+
+.grade {
+	width:200px;
+}
+
+.cen {
+	text-align:center;
+}
+
+#stuff {
+	height:60px;
+}
+
+.analysis {
+	display:none;
+	border:1px solid red;
+	color:red;
+}
+
+#notice {
+	color:red;
+}
+
+#whatyc, #qst, #enbrd {
+	color:white;
+}
+
+h2 {
+	background:pink;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:15px;
+	margin-top:30px;
+	margin-bottom:0px;
+}
